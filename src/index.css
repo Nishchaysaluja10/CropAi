@@ -1,0 +1,2769 @@
+:root {
+  /* Primitive Color Tokens */
+  --color-white: rgba(255, 255, 255, 1);
+  --color-black: rgba(0, 0, 0, 1);
+  --color-cream-50: rgba(252, 252, 249, 1);
+  --color-cream-100: rgba(255, 255, 253, 1);
+  --color-gray-200: rgba(245, 245, 245, 1);
+  --color-gray-300: rgba(167, 169, 169, 1);
+  --color-gray-400: rgba(119, 124, 124, 1);
+  --color-slate-500: rgba(98, 108, 113, 1);
+  --color-brown-600: rgba(94, 82, 64, 1);
+  --color-charcoal-700: rgba(31, 33, 33, 1);
+  --color-charcoal-800: rgba(38, 40, 40, 1);
+  --color-slate-900: rgba(19, 52, 59, 1);
+  --color-teal-300: rgba(50, 184, 198, 1);
+  --color-teal-400: rgba(45, 166, 178, 1);
+  --color-teal-500: rgba(33, 128, 141, 1);
+  --color-teal-600: rgba(29, 116, 128, 1);
+  --color-teal-700: rgba(26, 104, 115, 1);
+  --color-teal-800: rgba(41, 150, 161, 1);
+  --color-red-400: rgba(255, 84, 89, 1);
+  --color-red-500: rgba(192, 21, 47, 1);
+  --color-orange-400: rgba(230, 129, 97, 1);
+  --color-orange-500: rgba(168, 75, 47, 1);
+
+  /* RGB versions for opacity control */
+  --color-brown-600-rgb: 94, 82, 64;
+  --color-teal-500-rgb: 33, 128, 141;
+  --color-slate-900-rgb: 19, 52, 59;
+  --color-slate-500-rgb: 98, 108, 113;
+  --color-red-500-rgb: 192, 21, 47;
+  --color-red-400-rgb: 255, 84, 89;
+  --color-orange-500-rgb: 168, 75, 47;
+  --color-orange-400-rgb: 230, 129, 97;
+
+  /* Background color tokens (Light Mode) */
+  --color-bg-1: rgba(59, 130, 246, 0.08); /* Light blue */
+  --color-bg-2: rgba(245, 158, 11, 0.08); /* Light yellow */
+  --color-bg-3: rgba(34, 197, 94, 0.08); /* Light green */
+  --color-bg-4: rgba(239, 68, 68, 0.08); /* Light red */
+  --color-bg-5: rgba(147, 51, 234, 0.08); /* Light purple */
+  --color-bg-6: rgba(249, 115, 22, 0.08); /* Light orange */
+  --color-bg-7: rgba(236, 72, 153, 0.08); /* Light pink */
+  --color-bg-8: rgba(6, 182, 212, 0.08); /* Light cyan */
+
+  /* Semantic Color Tokens (Light Mode) */
+  --color-background: var(--color-cream-50);
+  --color-surface: var(--color-cream-100);
+  --color-text: var(--color-slate-900);
+  --color-text-secondary: var(--color-slate-500);
+  --color-primary: var(--color-teal-500);
+  --color-primary-hover: var(--color-teal-600);
+  --color-primary-active: var(--color-teal-700);
+  --color-secondary: rgba(var(--color-brown-600-rgb), 0.12);
+  --color-secondary-hover: rgba(var(--color-brown-600-rgb), 0.2);
+  --color-secondary-active: rgba(var(--color-brown-600-rgb), 0.25);
+  --color-border: rgba(var(--color-brown-600-rgb), 0.2);
+  --color-btn-primary-text: var(--color-cream-50);
+  --color-card-border: rgba(var(--color-brown-600-rgb), 0.12);
+  --color-card-border-inner: rgba(var(--color-brown-600-rgb), 0.12);
+  --color-error: var(--color-red-500);
+  --color-success: var(--color-teal-500);
+  --color-warning: var(--color-orange-500);
+  --color-info: var(--color-slate-500);
+  --color-focus-ring: rgba(var(--color-teal-500-rgb), 0.4);
+  --color-select-caret: rgba(var(--color-slate-900-rgb), 0.8);
+
+  /* Common style patterns */
+  --focus-ring: 0 0 0 3px var(--color-focus-ring);
+  --focus-outline: 2px solid var(--color-primary);
+  --status-bg-opacity: 0.15;
+  --status-border-opacity: 0.25;
+  --select-caret-light: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%23134252' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
+  --select-caret-dark: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%23f5f5f5' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
+
+  /* RGB versions for opacity control */
+  --color-success-rgb: 33, 128, 141;
+  --color-error-rgb: 192, 21, 47;
+  --color-warning-rgb: 168, 75, 47;
+  --color-info-rgb: 98, 108, 113;
+
+  /* Typography */
+  --font-family-base: "FKGroteskNeue", "Geist", "Inter", -apple-system,
+    BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  --font-family-mono: "Berkeley Mono", ui-monospace, SFMono-Regular, Menlo,
+    Monaco, Consolas, monospace;
+  --font-size-xs: 11px;
+  --font-size-sm: 12px;
+  --font-size-base: 14px;
+  --font-size-md: 14px;
+  --font-size-lg: 16px;
+  --font-size-xl: 18px;
+  --font-size-2xl: 20px;
+  --font-size-3xl: 24px;
+  --font-size-4xl: 30px;
+  --font-weight-normal: 400;
+  --font-weight-medium: 500;
+  --font-weight-semibold: 550;
+  --font-weight-bold: 600;
+  --line-height-tight: 1.2;
+  --line-height-normal: 1.5;
+  --letter-spacing-tight: -0.01em;
+
+  /* Spacing */
+  --space-0: 0;
+  --space-1: 1px;
+  --space-2: 2px;
+  --space-4: 4px;
+  --space-6: 6px;
+  --space-8: 8px;
+  --space-10: 10px;
+  --space-12: 12px;
+  --space-16: 16px;
+  --space-20: 20px;
+  --space-24: 24px;
+  --space-32: 32px;
+
+  /* Border Radius */
+  --radius-sm: 6px;
+  --radius-base: 8px;
+  --radius-md: 10px;
+  --radius-lg: 12px;
+  --radius-full: 9999px;
+
+  /* Shadows */
+  --shadow-xs: 0 1px 2px rgba(0, 0, 0, 0.02);
+  --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.04), 0 1px 2px rgba(0, 0, 0, 0.02);
+  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.04),
+    0 2px 4px -1px rgba(0, 0, 0, 0.02);
+  --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.04),
+    0 4px 6px -2px rgba(0, 0, 0, 0.02);
+  --shadow-inset-sm: inset 0 1px 0 rgba(255, 255, 255, 0.15),
+    inset 0 -1px 0 rgba(0, 0, 0, 0.03);
+
+  /* Animation */
+  --duration-fast: 150ms;
+  --duration-normal: 250ms;
+  --ease-standard: cubic-bezier(0.16, 1, 0.3, 1);
+
+  /* Layout */
+  --container-sm: 640px;
+  --container-md: 768px;
+  --container-lg: 1024px;
+  --container-xl: 1280px;
+}
+
+/* Dark mode colors */
+@media (prefers-color-scheme: dark) {
+  :root {
+    /* RGB versions for opacity control (Dark Mode) */
+    --color-gray-400-rgb: 119, 124, 124;
+    --color-teal-300-rgb: 50, 184, 198;
+    --color-gray-300-rgb: 167, 169, 169;
+    --color-gray-200-rgb: 245, 245, 245;
+
+    /* Background color tokens (Dark Mode) */
+    --color-bg-1: rgba(29, 78, 216, 0.15); /* Dark blue */
+    --color-bg-2: rgba(180, 83, 9, 0.15); /* Dark yellow */
+    --color-bg-3: rgba(21, 128, 61, 0.15); /* Dark green */
+    --color-bg-4: rgba(185, 28, 28, 0.15); /* Dark red */
+    --color-bg-5: rgba(107, 33, 168, 0.15); /* Dark purple */
+    --color-bg-6: rgba(194, 65, 12, 0.15); /* Dark orange */
+    --color-bg-7: rgba(190, 24, 93, 0.15); /* Dark pink */
+    --color-bg-8: rgba(8, 145, 178, 0.15); /* Dark cyan */
+
+    /* Semantic Color Tokens (Dark Mode) */
+    --color-background: var(--color-charcoal-700);
+    --color-surface: var(--color-charcoal-800);
+    --color-text: var(--color-gray-200);
+    --color-text-secondary: rgba(var(--color-gray-300-rgb), 0.7);
+    --color-primary: var(--color-teal-300);
+    --color-primary-hover: var(--color-teal-400);
+    --color-primary-active: var(--color-teal-800);
+    --color-secondary: rgba(var(--color-gray-400-rgb), 0.15);
+    --color-secondary-hover: rgba(var(--color-gray-400-rgb), 0.25);
+    --color-secondary-active: rgba(var(--color-gray-400-rgb), 0.3);
+    --color-border: rgba(var(--color-gray-400-rgb), 0.3);
+    --color-error: var(--color-red-400);
+    --color-success: var(--color-teal-300);
+    --color-warning: var(--color-orange-400);
+    --color-info: var(--color-gray-300);
+    --color-focus-ring: rgba(var(--color-teal-300-rgb), 0.4);
+    --color-btn-primary-text: var(--color-slate-900);
+    --color-card-border: rgba(var(--color-gray-400-rgb), 0.2);
+    --color-card-border-inner: rgba(var(--color-gray-400-rgb), 0.15);
+    --shadow-inset-sm: inset 0 1px 0 rgba(255, 255, 255, 0.1),
+      inset 0 -1px 0 rgba(0, 0, 0, 0.15);
+    --button-border-secondary: rgba(var(--color-gray-400-rgb), 0.2);
+    --color-border-secondary: rgba(var(--color-gray-400-rgb), 0.2);
+    --color-select-caret: rgba(var(--color-gray-200-rgb), 0.8);
+
+    /* Common style patterns - updated for dark mode */
+    --focus-ring: 0 0 0 3px var(--color-focus-ring);
+    --focus-outline: 2px solid var(--color-primary);
+    --status-bg-opacity: 0.15;
+    --status-border-opacity: 0.25;
+    --select-caret-light: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%23134252' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
+    --select-caret-dark: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%23f5f5f5' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
+
+    /* RGB versions for dark mode */
+    --color-success-rgb: var(--color-teal-300-rgb);
+    --color-error-rgb: var(--color-red-400-rgb);
+    --color-warning-rgb: var(--color-orange-400-rgb);
+    --color-info-rgb: var(--color-gray-300-rgb);
+  }
+}
+
+/* Data attribute for manual theme switching */
+[data-color-scheme="dark"] {
+  /* RGB versions for opacity control (dark mode) */
+  --color-gray-400-rgb: 119, 124, 124;
+  --color-teal-300-rgb: 50, 184, 198;
+  --color-gray-300-rgb: 167, 169, 169;
+  --color-gray-200-rgb: 245, 245, 245;
+
+  /* Colorful background palette - Dark Mode */
+  --color-bg-1: rgba(29, 78, 216, 0.15); /* Dark blue */
+  --color-bg-2: rgba(180, 83, 9, 0.15); /* Dark yellow */
+  --color-bg-3: rgba(21, 128, 61, 0.15); /* Dark green */
+  --color-bg-4: rgba(185, 28, 28, 0.15); /* Dark red */
+  --color-bg-5: rgba(107, 33, 168, 0.15); /* Dark purple */
+  --color-bg-6: rgba(194, 65, 12, 0.15); /* Dark orange */
+  --color-bg-7: rgba(190, 24, 93, 0.15); /* Dark pink */
+  --color-bg-8: rgba(8, 145, 178, 0.15); /* Dark cyan */
+
+  /* Semantic Color Tokens (Dark Mode) */
+  --color-background: var(--color-charcoal-700);
+  --color-surface: var(--color-charcoal-800);
+  --color-text: var(--color-gray-200);
+  --color-text-secondary: rgba(var(--color-gray-300-rgb), 0.7);
+  --color-primary: var(--color-teal-300);
+  --color-primary-hover: var(--color-teal-400);
+  --color-primary-active: var(--color-teal-800);
+  --color-secondary: rgba(var(--color-gray-400-rgb), 0.15);
+  --color-secondary-hover: rgba(var(--color-gray-400-rgb), 0.25);
+  --color-secondary-active: rgba(var(--color-gray-400-rgb), 0.3);
+  --color-border: rgba(var(--color-gray-400-rgb), 0.3);
+  --color-error: var(--color-red-400);
+  --color-success: var(--color-teal-300);
+  --color-warning: var(--color-orange-400);
+  --color-info: var(--color-gray-300);
+  --color-focus-ring: rgba(var(--color-teal-300-rgb), 0.4);
+  --color-btn-primary-text: var(--color-slate-900);
+  --color-card-border: rgba(var(--color-gray-400-rgb), 0.15);
+  --color-card-border-inner: rgba(var(--color-gray-400-rgb), 0.15);
+  --shadow-inset-sm: inset 0 1px 0 rgba(255, 255, 255, 0.1),
+    inset 0 -1px 0 rgba(0, 0, 0, 0.15);
+  --color-border-secondary: rgba(var(--color-gray-400-rgb), 0.2);
+  --color-select-caret: rgba(var(--color-gray-200-rgb), 0.8);
+
+  /* Common style patterns - updated for dark mode */
+  --focus-ring: 0 0 0 3px var(--color-focus-ring);
+  --focus-outline: 2px solid var(--color-primary);
+  --status-bg-opacity: 0.15;
+  --status-border-opacity: 0.25;
+  --select-caret-light: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%23134252' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
+  --select-caret-dark: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%23f5f5f5' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
+
+  /* RGB versions for dark mode */
+  --color-success-rgb: var(--color-teal-300-rgb);
+  --color-error-rgb: var(--color-red-400-rgb);
+  --color-warning-rgb: var(--color-orange-400-rgb);
+  --color-info-rgb: var(--color-gray-300-rgb);
+}
+
+[data-color-scheme="light"] {
+  /* RGB versions for opacity control (light mode) */
+  --color-brown-600-rgb: 94, 82, 64;
+  --color-teal-500-rgb: 33, 128, 141;
+  --color-slate-900-rgb: 19, 52, 59;
+
+  /* Semantic Color Tokens (Light Mode) */
+  --color-background: var(--color-cream-50);
+  --color-surface: var(--color-cream-100);
+  --color-text: var(--color-slate-900);
+  --color-text-secondary: var(--color-slate-500);
+  --color-primary: var(--color-teal-500);
+  --color-primary-hover: var(--color-teal-600);
+  --color-primary-active: var(--color-teal-700);
+  --color-secondary: rgba(var(--color-brown-600-rgb), 0.12);
+  --color-secondary-hover: rgba(var(--color-brown-600-rgb), 0.2);
+  --color-secondary-active: rgba(var(--color-brown-600-rgb), 0.25);
+  --color-border: rgba(var(--color-brown-600-rgb), 0.2);
+  --color-btn-primary-text: var(--color-cream-50);
+  --color-card-border: rgba(var(--color-brown-600-rgb), 0.12);
+  --color-card-border-inner: rgba(var(--color-brown-600-rgb), 0.12);
+  --color-error: var(--color-red-500);
+  --color-success: var(--color-teal-500);
+  --color-warning: var(--color-orange-500);
+  --color-info: var(--color-slate-500);
+  --color-focus-ring: rgba(var(--color-teal-500-rgb), 0.4);
+
+  /* RGB versions for light mode */
+  --color-success-rgb: var(--color-teal-500-rgb);
+  --color-error-rgb: var(--color-red-500-rgb);
+  --color-warning-rgb: var(--color-orange-500-rgb);
+  --color-info-rgb: var(--color-slate-500-rgb);
+}
+
+/* Base styles */
+html {
+  font-size: var(--font-size-base);
+  font-family: var(--font-family-base);
+  line-height: var(--line-height-normal);
+  color: var(--color-text);
+  background-color: var(--color-background);
+  -webkit-font-smoothing: antialiased;
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+/* Typography */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+  font-weight: var(--font-weight-semibold);
+  line-height: var(--line-height-tight);
+  color: var(--color-text);
+  letter-spacing: var(--letter-spacing-tight);
+}
+
+h1 {
+  font-size: var(--font-size-4xl);
+}
+h2 {
+  font-size: var(--font-size-3xl);
+}
+h3 {
+  font-size: var(--font-size-2xl);
+}
+h4 {
+  font-size: var(--font-size-xl);
+}
+h5 {
+  font-size: var(--font-size-lg);
+}
+h6 {
+  font-size: var(--font-size-md);
+}
+
+p {
+  margin: 0 0 var(--space-16) 0;
+}
+
+a {
+  color: var(--color-primary);
+  text-decoration: none;
+  transition: color var(--duration-fast) var(--ease-standard);
+}
+
+a:hover {
+  color: var(--color-primary-hover);
+}
+
+code,
+pre {
+  font-family: var(--font-family-mono);
+  font-size: calc(var(--font-size-base) * 0.95);
+  background-color: var(--color-secondary);
+  border-radius: var(--radius-sm);
+}
+
+code {
+  padding: var(--space-1) var(--space-4);
+}
+
+pre {
+  padding: var(--space-16);
+  margin: var(--space-16) 0;
+  overflow: auto;
+  border: 1px solid var(--color-border);
+}
+
+pre code {
+  background: none;
+  padding: 0;
+}
+
+/* Buttons */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--space-8) var(--space-16);
+  border-radius: var(--radius-base);
+  font-size: var(--font-size-base);
+  font-weight: 500;
+  line-height: 1.5;
+  cursor: pointer;
+  transition: all var(--duration-normal) var(--ease-standard);
+  border: none;
+  text-decoration: none;
+  position: relative;
+}
+
+.btn:focus-visible {
+  outline: none;
+  box-shadow: var(--focus-ring);
+}
+
+.btn--primary {
+  background: var(--color-primary);
+  color: var(--color-btn-primary-text);
+}
+
+.btn--primary:hover {
+  background: var(--color-primary-hover);
+}
+
+.btn--primary:active {
+  background: var(--color-primary-active);
+}
+
+.btn--secondary {
+  background: var(--color-secondary);
+  color: var(--color-text);
+}
+
+.btn--secondary:hover {
+  background: var(--color-secondary-hover);
+}
+
+.btn--secondary:active {
+  background: var(--color-secondary-active);
+}
+
+.btn--outline {
+  background: transparent;
+  border: 1px solid var(--color-border);
+  color: var(--color-text);
+}
+
+.btn--outline:hover {
+  background: var(--color-secondary);
+}
+
+.btn--sm {
+  padding: var(--space-4) var(--space-12);
+  font-size: var(--font-size-sm);
+  border-radius: var(--radius-sm);
+}
+
+.btn--lg {
+  padding: var(--space-10) var(--space-20);
+  font-size: var(--font-size-lg);
+  border-radius: var(--radius-md);
+}
+
+.btn--full-width {
+  width: 100%;
+}
+
+.btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* Form elements */
+.form-control {
+  display: block;
+  width: 100%;
+  padding: var(--space-8) var(--space-12);
+  font-size: var(--font-size-md);
+  line-height: 1.5;
+  color: var(--color-text);
+  background-color: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-base);
+  transition: border-color var(--duration-fast) var(--ease-standard),
+    box-shadow var(--duration-fast) var(--ease-standard);
+}
+
+textarea.form-control {
+  font-family: var(--font-family-base);
+  font-size: var(--font-size-base);
+}
+
+select.form-control {
+  padding: var(--space-8) var(--space-12);
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background-image: var(--select-caret-light);
+  background-repeat: no-repeat;
+  background-position: right var(--space-12) center;
+  background-size: 16px;
+  padding-right: var(--space-32);
+}
+
+/* Add a dark mode specific caret */
+@media (prefers-color-scheme: dark) {
+  select.form-control {
+    background-image: var(--select-caret-dark);
+  }
+}
+
+/* Also handle data-color-scheme */
+[data-color-scheme="dark"] select.form-control {
+  background-image: var(--select-caret-dark);
+}
+
+[data-color-scheme="light"] select.form-control {
+  background-image: var(--select-caret-light);
+}
+
+.form-control:focus {
+  border-color: var(--color-primary);
+  outline: var(--focus-outline);
+}
+
+.form-label {
+  display: block;
+  margin-bottom: var(--space-8);
+  font-weight: var(--font-weight-medium);
+  font-size: var(--font-size-sm);
+}
+
+.form-group {
+  margin-bottom: var(--space-16);
+}
+
+/* Card component */
+.card {
+  background-color: var(--color-surface);
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--color-card-border);
+  box-shadow: var(--shadow-sm);
+  overflow: hidden;
+  transition: box-shadow var(--duration-normal) var(--ease-standard);
+}
+
+.card:hover {
+  box-shadow: var(--shadow-md);
+}
+
+.card__body {
+  padding: var(--space-16);
+}
+
+.card__header,
+.card__footer {
+  padding: var(--space-16);
+  border-bottom: 1px solid var(--color-card-border-inner);
+}
+
+/* Status indicators - simplified with CSS variables */
+.status {
+  display: inline-flex;
+  align-items: center;
+  padding: var(--space-6) var(--space-12);
+  border-radius: var(--radius-full);
+  font-weight: var(--font-weight-medium);
+  font-size: var(--font-size-sm);
+}
+
+.status--success {
+  background-color: rgba(
+    var(--color-success-rgb, 33, 128, 141),
+    var(--status-bg-opacity)
+  );
+  color: var(--color-success);
+  border: 1px solid
+    rgba(var(--color-success-rgb, 33, 128, 141), var(--status-border-opacity));
+}
+
+.status--error {
+  background-color: rgba(
+    var(--color-error-rgb, 192, 21, 47),
+    var(--status-bg-opacity)
+  );
+  color: var(--color-error);
+  border: 1px solid
+    rgba(var(--color-error-rgb, 192, 21, 47), var(--status-border-opacity));
+}
+
+.status--warning {
+  background-color: rgba(
+    var(--color-warning-rgb, 168, 75, 47),
+    var(--status-bg-opacity)
+  );
+  color: var(--color-warning);
+  border: 1px solid
+    rgba(var(--color-warning-rgb, 168, 75, 47), var(--status-border-opacity));
+}
+
+.status--info {
+  background-color: rgba(
+    var(--color-info-rgb, 98, 108, 113),
+    var(--status-bg-opacity)
+  );
+  color: var(--color-info);
+  border: 1px solid
+    rgba(var(--color-info-rgb, 98, 108, 113), var(--status-border-opacity));
+}
+
+/* Container layout */
+.container {
+  width: 100%;
+  margin-right: auto;
+  margin-left: auto;
+  padding-right: var(--space-16);
+  padding-left: var(--space-16);
+}
+
+@media (min-width: 640px) {
+  .container {
+    max-width: var(--container-sm);
+  }
+}
+@media (min-width: 768px) {
+  .container {
+    max-width: var(--container-md);
+  }
+}
+@media (min-width: 1024px) {
+  .container {
+    max-width: var(--container-lg);
+  }
+}
+@media (min-width: 1280px) {
+  .container {
+    max-width: var(--container-xl);
+  }
+}
+
+/* Utility classes */
+.flex {
+  display: flex;
+}
+.flex-col {
+  flex-direction: column;
+}
+.items-center {
+  align-items: center;
+}
+.justify-center {
+  justify-content: center;
+}
+.justify-between {
+  justify-content: space-between;
+}
+.gap-4 {
+  gap: var(--space-4);
+}
+.gap-8 {
+  gap: var(--space-8);
+}
+.gap-16 {
+  gap: var(--space-16);
+}
+
+.m-0 {
+  margin: 0;
+}
+.mt-8 {
+  margin-top: var(--space-8);
+}
+.mb-8 {
+  margin-bottom: var(--space-8);
+}
+.mx-8 {
+  margin-left: var(--space-8);
+  margin-right: var(--space-8);
+}
+.my-8 {
+  margin-top: var(--space-8);
+  margin-bottom: var(--space-8);
+}
+
+.p-0 {
+  padding: 0;
+}
+.py-8 {
+  padding-top: var(--space-8);
+  padding-bottom: var(--space-8);
+}
+.px-8 {
+  padding-left: var(--space-8);
+  padding-right: var(--space-8);
+}
+.py-16 {
+  padding-top: var(--space-16);
+  padding-bottom: var(--space-16);
+}
+.px-16 {
+  padding-left: var(--space-16);
+  padding-right: var(--space-16);
+}
+
+.block {
+  display: block;
+}
+.hidden {
+  display: none;
+}
+
+/* Accessibility */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
+
+:focus-visible {
+  outline: var(--focus-outline);
+  outline-offset: 2px;
+}
+
+/* Dark mode specifics */
+[data-color-scheme="dark"] .btn--outline {
+  border: 1px solid var(--color-border-secondary);
+}
+
+@font-face {
+  font-family: 'FKGroteskNeue';
+  src: url('https://r2cdn.perplexity.ai/fonts/FKGroteskNeue.woff2')
+    format('woff2');
+}
+
+/* END PERPLEXITY DESIGN SYSTEM */
+/* CropAI - Complete Agricultural Platform Styles - FIXED AGRICULTURAL THEME */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--font-family-base);
+  line-height: var(--line-height-normal);
+  color: var(--color-text);
+  background-color: var(--color-background);
+  overflow-x: hidden;
+}
+
+/* Navigation */
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  background: rgba(252, 252, 249, 0.98);
+  backdrop-filter: blur(12px);
+  z-index: 1000;
+  border-bottom: 1px solid var(--color-border);
+  box-shadow: 0 2px 8px rgba(45, 80, 22, 0.1);
+}
+
+[data-color-scheme="dark"] .navbar {
+  background: rgba(31, 33, 33, 0.98);
+}
+
+.nav-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: var(--space-16) 0;
+  position: relative;
+}
+
+.logo h2 {
+  color: #2d5016;
+  font-weight: var(--font-weight-bold);
+  font-size: var(--font-size-2xl);
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: var(--space-24);
+}
+
+.nav-links a {
+  color: #2d5016;
+  text-decoration: none;
+  font-weight: var(--font-weight-medium);
+  transition: color var(--duration-fast) var(--ease-standard);
+  position: relative;
+}
+
+.nav-links a:hover {
+  color: #4a7c23;
+}
+
+.nav-links a.active::after {
+  content: '';
+  position: absolute;
+  bottom: -8px;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: #4a7c23;
+  border-radius: var(--radius-full);
+}
+
+.language-selector {
+  background: var(--color-surface);
+  border: 1px solid #d4c5a0;
+  border-radius: var(--radius-base);
+  padding: var(--space-8) var(--space-12);
+  font-size: var(--font-size-sm);
+  color: var(--color-text);
+  cursor: pointer;
+}
+
+.nav-mobile-toggle {
+  display: none;
+  font-size: var(--font-size-2xl);
+  cursor: pointer;
+  color: var(--color-text);
+}
+
+/* Hero Section - FIXED AGRICULTURAL THEME */
+.hero {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  background: linear-gradient(135deg, #f4f7f0, #e8f2e1);
+}
+
+.hero-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  pointer-events: none;
+  background-image:
+    linear-gradient(rgba(244,247,240,0.75), rgba(244,247,240,0.85)),
+    url('https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?q=80&w=1920&auto=format&fit=crop');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  transform: scale(1.02);
+  filter: saturate(1.05) contrast(1.02);
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  max-width: 900px;
+  margin: 0 auto;
+  padding-top: 100px;
+  animation: fadeInUp 1s ease-out;
+}
+
+.hero-badge {
+  display: inline-block;
+  background: rgba(255,255,255,0.85);
+  border: 1px solid rgba(212, 197, 160, 0.5);
+  border-radius: var(--radius-full);
+  padding: 6px 12px;
+  margin-bottom: 12px;
+  color: #4a7c23;
+  font-weight: var(--font-weight-medium);
+  box-shadow: 0 2px 6px rgba(45,80,22,0.08);
+}
+
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.hero-title {
+  font-size: var(--font-size-4xl);
+  font-weight: var(--font-weight-bold);
+  margin-bottom: var(--space-20);
+  color: #2d5016;
+  text-shadow: 0 2px 4px rgba(45,80,22,0.1);
+}
+
+.hero-description {
+  font-size: var(--font-size-xl);
+  color: #5a6b3f;
+  margin-bottom: var(--space-32);
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.hero-buttons {
+  display: flex;
+  gap: var(--space-16);
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.hero-stats {
+  display: flex;
+  justify-content: center;
+  gap: 18px;
+  margin-top: 18px;
+}
+
+.hero-stat {
+  background: rgba(255, 255, 255, 0.85);
+  border: 1px solid rgba(212, 197, 160, 0.5);
+  border-radius: var(--radius-full);
+  padding: 8px 14px;
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+}
+
+.hero-stat-value {
+  color: #4a7c23;
+  font-weight: var(--font-weight-bold);
+}
+
+.hero-stat-label {
+  color: #5a6b3f;
+  font-size: var(--font-size-sm);
+}
+
+.scroll-cue {
+  margin-top: 24px;
+  color: #4a7c23;
+  font-size: 24px;
+  animation: bounce 1.5s infinite;
+}
+
+@keyframes bounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(6px); }
+}
+
+/* Page Management */
+.page {
+  min-height: calc(100vh - 80px);
+  padding-top: 120px;
+  padding-bottom: var(--space-32);
+  background: #faf9f6;
+}
+
+.page-title {
+  text-align: center;
+  font-size: var(--font-size-3xl);
+  font-weight: var(--font-weight-bold);
+  margin-bottom: var(--space-32);
+  color: #2d5016;
+}
+
+/* Dashboard Styles - AGRICULTURAL THEME */
+.metrics-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: var(--space-24);
+  margin-bottom: var(--space-32);
+}
+
+.metric-card {
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: var(--radius-lg);
+  padding: var(--space-24);
+  text-align: center;
+  box-shadow: 0 4px 12px rgba(45, 80, 22, 0.1);
+  border: 1px solid rgba(212, 197, 160, 0.3);
+  transition: all var(--duration-normal) var(--ease-standard);
+}
+
+.metric-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 24px rgba(45, 80, 22, 0.15);
+}
+
+.metric-value {
+  font-size: var(--font-size-3xl);
+  font-weight: var(--font-weight-bold);
+  color: #4a7c23;
+  margin-bottom: var(--space-8);
+}
+
+.metric-label {
+  font-size: var(--font-size-lg);
+  color: #2d5016;
+  margin-bottom: var(--space-4);
+}
+
+.metric-change {
+  font-size: var(--font-size-sm);
+  color: #6ba82f;
+  font-weight: var(--font-weight-medium);
+}
+
+.dashboard-section {
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: var(--radius-lg);
+  padding: var(--space-32);
+  margin-bottom: var(--space-32);
+  box-shadow: 0 4px 12px rgba(45, 80, 22, 0.1);
+  border: 1px solid rgba(212, 197, 160, 0.3);
+}
+
+.dashboard-section h3 {
+  margin-bottom: var(--space-24);
+  color: #2d5016;
+  font-size: var(--font-size-2xl);
+}
+
+/* Weather Overview - AGRICULTURAL THEME */
+.weather-overview-grid {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: var(--space-24);
+  align-items: center;
+}
+
+.weather-card {
+  display: flex;
+  align-items: center;
+  gap: var(--space-16);
+  background: rgba(232, 242, 225, 0.6);
+  padding: var(--space-20);
+  border-radius: var(--radius-md);
+  border: 1px solid rgba(212, 197, 160, 0.4);
+}
+
+.weather-icon {
+  font-size: var(--font-size-4xl);
+}
+
+.weather-temp {
+  font-size: var(--font-size-3xl);
+  font-weight: var(--font-weight-bold);
+  color: #4a7c23;
+}
+
+.weather-location {
+  font-size: var(--font-size-lg);
+  color: #2d5016;
+  margin-bottom: var(--space-4);
+}
+
+.weather-condition {
+  color: #5a6b3f;
+}
+
+.weather-stats-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--space-16);
+}
+
+.weather-stat {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: var(--space-12);
+  background: rgba(255, 255, 255, 0.8);
+  border-radius: var(--radius-base);
+  border: 1px solid rgba(212, 197, 160, 0.3);
+}
+
+.stat-label {
+  color: #5a6b3f;
+  font-size: var(--font-size-sm);
+}
+
+.stat-value {
+  color: #2d5016;
+  font-weight: var(--font-weight-bold);
+}
+
+/* Updated Button Styles - AGRICULTURAL THEME */
+.btn--primary {
+  background: linear-gradient(135deg, #4a7c23, #6ba82f);
+  color: white;
+  border: none;
+}
+
+.btn--primary:hover {
+  background: linear-gradient(135deg, #3d6b1d, #5d9428);
+}
+
+.btn--primary:active {
+  background: linear-gradient(135deg, #2d5016, #4a7c23);
+}
+
+.btn--secondary {
+  background: rgba(232, 242, 225, 0.8);
+  color: #2d5016;
+  border: 1px solid rgba(212, 197, 160, 0.5);
+}
+
+.btn--secondary:hover {
+  background: rgba(232, 242, 225, 1);
+}
+
+.btn--outline {
+  background: transparent;
+  border: 1px solid #4a7c23;
+  color: #2d5016;
+}
+
+.btn--outline:hover {
+  background: rgba(232, 242, 225, 0.5);
+}
+
+/* Yield Prediction Advanced - AGRICULTURAL THEME */
+.yield-calculator-advanced {
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: var(--radius-lg);
+  padding: var(--space-32);
+  box-shadow: 0 8px 24px rgba(45, 80, 22, 0.1);
+  border: 1px solid rgba(212, 197, 160, 0.3);
+}
+
+.calc-form-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: var(--space-20);
+  margin-bottom: var(--space-32);
+}
+
+.yield-results-advanced {
+  margin-top: var(--space-32);
+  animation: slideUp 0.6s ease-out;
+}
+
+@keyframes slideUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.results-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: var(--space-24);
+  padding-bottom: var(--space-16);
+  border-bottom: 2px solid rgba(212, 197, 160, 0.4);
+}
+
+.confidence-display {
+  font-size: var(--font-size-lg);
+  font-weight: var(--font-weight-medium);
+}
+
+.confidence-value {
+  color: #6ba82f;
+  font-weight: var(--font-weight-bold);
+  font-size: var(--font-size-xl);
+}
+
+.results-grid-advanced {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: var(--space-24);
+  margin-bottom: var(--space-32);
+}
+
+.result-card-large {
+  background: rgba(232, 242, 225, 0.3);
+  padding: var(--space-24);
+  border-radius: var(--radius-md);
+  text-align: center;
+  border: 1px solid rgba(212, 197, 160, 0.4);
+  transition: all var(--duration-normal) var(--ease-standard);
+}
+
+.result-card-large:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 18px rgba(45, 80, 22, 0.1);
+}
+
+.result-title {
+  font-size: var(--font-size-lg);
+  color: #5a6b3f;
+  margin-bottom: var(--space-12);
+  font-weight: var(--font-weight-medium);
+}
+
+.result-value-large {
+  font-size: var(--font-size-3xl);
+  font-weight: var(--font-weight-bold);
+  color: #4a7c23;
+  margin-bottom: var(--space-8);
+}
+
+.productivity-increase {
+  color: #6ba82f !important;
+}
+
+.result-subtitle {
+  font-size: var(--font-size-sm);
+  color: #5a6b3f;
+}
+
+.weather-yield-correlation {
+  background: rgba(244, 247, 240, 0.8);
+  padding: var(--space-24);
+  border-radius: var(--radius-md);
+  border: 1px solid rgba(212, 197, 160, 0.4);
+}
+
+.weather-yield-correlation h4 {
+  margin-bottom: var(--space-16);
+  color: #2d5016;
+}
+
+/* Recommendations Page - AGRICULTURAL THEME */
+.recommendations-dashboard {
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: var(--radius-lg);
+  padding: var(--space-32);
+  box-shadow: 0 8px 24px rgba(45, 80, 22, 0.1);
+  border: 1px solid rgba(212, 197, 160, 0.3);
+}
+
+.recommendation-filters {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: var(--space-16);
+  margin-bottom: var(--space-32);
+  padding-bottom: var(--space-24);
+  border-bottom: 2px solid rgba(212, 197, 160, 0.4);
+}
+
+.recommendation-section {
+  margin-bottom: var(--space-32);
+}
+
+.recommendation-section h3 {
+  font-size: var(--font-size-2xl);
+  margin-bottom: var(--space-20);
+  color: #2d5016;
+  display: flex;
+  align-items: center;
+  gap: var(--space-8);
+}
+
+.rec-card {
+  background: rgba(248, 250, 245, 0.8);
+  padding: var(--space-20);
+  border-radius: var(--radius-md);
+  margin-bottom: var(--space-16);
+  border-left: 4px solid #4a7c23;
+  transition: all var(--duration-normal) var(--ease-standard);
+}
+
+.rec-card:hover {
+  transform: translateX(4px);
+  box-shadow: 0 4px 12px rgba(45, 80, 22, 0.1);
+}
+
+.rec-card h4 {
+  color: #2d5016;
+  margin-bottom: var(--space-12);
+  font-size: var(--font-size-lg);
+}
+
+.rec-card p {
+  color: #5a6b3f;
+  margin-bottom: var(--space-12);
+  line-height: 1.6;
+}
+
+.rec-impact {
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-medium);
+}
+
+.impact-positive {
+  color: #6ba82f;
+  font-weight: var(--font-weight-bold);
+}
+
+/* Irrigation Timeline - AGRICULTURAL THEME */
+.irrigation-timeline {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-20);
+}
+
+.timeline-item {
+  display: grid;
+  grid-template-columns: 120px 1fr;
+  gap: var(--space-20);
+  align-items: start;
+  padding: var(--space-16);
+  background: rgba(232, 242, 225, 0.4);
+  border-radius: var(--radius-base);
+  border: 1px solid rgba(212, 197, 160, 0.4);
+}
+
+.timeline-date {
+  background: linear-gradient(135deg, #4a7c23, #6ba82f);
+  color: white;
+  padding: var(--space-8) var(--space-12);
+  border-radius: var(--radius-base);
+  text-align: center;
+  font-weight: var(--font-weight-bold);
+  font-size: var(--font-size-sm);
+}
+
+.timeline-content h5 {
+  color: #2d5016;
+  margin-bottom: var(--space-8);
+  font-size: var(--font-size-lg);
+}
+
+.timeline-content p {
+  color: #5a6b3f;
+  line-height: 1.5;
+  margin: 0;
+}
+
+/* Fertilizer Schedule - AGRICULTURAL THEME */
+.fertilizer-schedule {
+  display: grid;
+  gap: var(--space-16);
+}
+
+.fertilizer-stage {
+  background: rgba(218, 165, 32, 0.08);
+  padding: var(--space-20);
+  border-radius: var(--radius-md);
+  border: 1px solid rgba(218, 165, 32, 0.2);
+}
+
+.fertilizer-stage h4 {
+  color: #2d5016;
+  margin-bottom: var(--space-12);
+  font-size: var(--font-size-lg);
+}
+
+.fertilizer-details {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-8);
+}
+
+.fertilizer-amount {
+  color: #8b4513;
+  font-weight: var(--font-weight-bold);
+  font-size: var(--font-size-lg);
+}
+
+.fertilizer-type {
+  color: #5a6b3f;
+  font-size: var(--font-size-sm);
+}
+
+/* Pest Management - AGRICULTURAL THEME */
+.pest-management {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-16);
+}
+
+.pest-alert {
+  background: rgba(255, 255, 255, 0.9);
+  padding: var(--space-20);
+  border-radius: var(--radius-md);
+  border: 1px solid rgba(212, 197, 160, 0.4);
+  position: relative;
+}
+
+.pest-severity {
+  position: absolute;
+  top: var(--space-16);
+  right: var(--space-16);
+  padding: var(--space-4) var(--space-12);
+  border-radius: var(--radius-full);
+  font-size: var(--font-size-xs);
+  font-weight: var(--font-weight-bold);
+}
+
+.pest-severity.high {
+  background: #dc3545;
+  color: white;
+}
+
+.pest-severity.medium {
+  background: #fd7e14;
+  color: white;
+}
+
+.pest-alert h4 {
+  color: #2d5016;
+  margin-bottom: var(--space-12);
+  margin-right: var(--space-80);
+}
+
+.pest-alert p {
+  color: #5a6b3f;
+  margin-bottom: var(--space-12);
+  line-height: 1.6;
+}
+
+.pest-action {
+  background: rgba(218, 165, 32, 0.1);
+  padding: var(--space-12);
+  border-radius: var(--radius-base);
+  border-left: 3px solid #daa520;
+}
+
+.pest-action strong {
+  color: #2d5016;
+}
+
+/* Disease Detector - AGRICULTURAL THEME */
+.disease-detector-advanced {
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: var(--radius-lg);
+  padding: var(--space-32);
+  box-shadow: 0 8px 24px rgba(45, 80, 22, 0.1);
+  border: 1px solid rgba(212, 197, 160, 0.3);
+}
+
+.detector-interface {
+  display: grid;
+  gap: var(--space-32);
+}
+
+.upload-section {
+  text-align: center;
+}
+
+.upload-area {
+  border: 3px dashed #4a7c23;
+  border-radius: var(--radius-lg);
+  padding: var(--space-32);
+  cursor: pointer;
+  transition: all var(--duration-normal) var(--ease-standard);
+  background: rgba(232, 242, 225, 0.3);
+  margin-bottom: var(--space-24);
+}
+
+.upload-area:hover {
+  border-color: #6ba82f;
+  background: rgba(232, 242, 225, 0.5);
+  transform: translateY(-2px);
+}
+
+.upload-icon {
+  font-size: 4rem;
+  margin-bottom: var(--space-16);
+  color: #4a7c23;
+}
+
+.upload-area h3 {
+  color: #2d5016;
+  margin-bottom: var(--space-12);
+  font-size: var(--font-size-2xl);
+}
+
+.upload-area p {
+  color: #5a6b3f;
+  margin-bottom: var(--space-8);
+  font-size: var(--font-size-lg);
+}
+
+.upload-formats {
+  color: #5a6b3f;
+  font-size: var(--font-size-sm);
+  font-style: italic;
+}
+
+.sample-images-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: var(--space-16);
+}
+
+.sample-image {
+  background: rgba(255, 255, 255, 0.9);
+  border: 1px solid rgba(212, 197, 160, 0.4);
+  border-radius: var(--radius-md);
+  padding: var(--space-16);
+  cursor: pointer;
+  transition: all var(--duration-normal) var(--ease-standard);
+  text-align: center;
+}
+
+.sample-image:hover {
+  border-color: #4a7c23;
+  transform: translateY(-4px);
+  box-shadow: 0 4px 12px rgba(45, 80, 22, 0.1);
+}
+
+.sample-icon {
+  font-size: var(--font-size-3xl);
+  margin-bottom: var(--space-8);
+}
+
+.sample-label {
+  color: #2d5016;
+  font-weight: var(--font-weight-medium);
+  font-size: var(--font-size-sm);
+}
+
+/* Detection Results - AGRICULTURAL THEME */
+.detection-results {
+  background: rgba(248, 250, 245, 0.9);
+  border-radius: var(--radius-lg);
+  padding: var(--space-32);
+  border: 1px solid rgba(212, 197, 160, 0.4);
+}
+
+.analysis-progress {
+  text-align: center;
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+.progress-spinner {
+  width: 60px;
+  height: 60px;
+  border: 4px solid rgba(212, 197, 160, 0.3);
+  border-top: 4px solid #4a7c23;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+  margin: 0 auto var(--space-20);
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.analysis-progress h3 {
+  color: #2d5016;
+  margin-bottom: var(--space-12);
+  font-size: var(--font-size-2xl);
+}
+
+.progress-bar {
+  background: rgba(212, 197, 160, 0.3);
+  height: 8px;
+  border-radius: var(--radius-full);
+  overflow: hidden;
+  margin-top: var(--space-16);
+}
+
+.progress-fill {
+  background: linear-gradient(90deg, #4a7c23, #6ba82f);
+  height: 100%;
+  border-radius: var(--radius-full);
+  transition: width var(--duration-normal) var(--ease-standard);
+}
+
+.disease-diagnosis {
+  animation: slideIn 0.8s ease-out;
+}
+
+@keyframes slideIn {
+  from { opacity: 0; transform: translateX(-20px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+
+.diagnosis-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: var(--space-24);
+  padding-bottom: var(--space-16);
+  border-bottom: 2px solid rgba(212, 197, 160, 0.4);
+}
+
+.diagnosis-header h3 {
+  color: #2d5016;
+  font-size: var(--font-size-2xl);
+}
+
+.confidence-badge {
+  background: linear-gradient(135deg, #6ba82f, #4a7c23);
+  color: white;
+  padding: var(--space-8) var(--space-16);
+  border-radius: var(--radius-full);
+  font-size: var(--font-size-lg);
+  font-weight: var(--font-weight-bold);
+}
+
+.diagnosis-details {
+  display: grid;
+  gap: var(--space-32);
+}
+
+.diagnosis-section h4 {
+  color: #2d5016;
+  margin-bottom: var(--space-16);
+  font-size: var(--font-size-xl);
+  display: flex;
+  align-items: center;
+  gap: var(--space-8);
+}
+
+.diagnosis-section ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+.diagnosis-section li {
+  padding: var(--space-12);
+  background: rgba(255, 255, 255, 0.8);
+  border: 1px solid rgba(212, 197, 160, 0.4);
+  border-radius: var(--radius-base);
+  margin-bottom: var(--space-8);
+  color: #2d5016;
+}
+
+/* Treatment Steps - AGRICULTURAL THEME */
+.treatment-steps {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-16);
+}
+
+.treatment-step {
+  display: grid;
+  grid-template-columns: 120px 1fr;
+  gap: var(--space-16);
+  align-items: start;
+  background: rgba(255, 255, 255, 0.8);
+  padding: var(--space-16);
+  border-radius: var(--radius-md);
+  border: 1px solid rgba(212, 197, 160, 0.4);
+}
+
+.step-priority {
+  padding: var(--space-6) var(--space-12);
+  border-radius: var(--radius-full);
+  text-align: center;
+  font-size: var(--font-size-xs);
+  font-weight: var(--font-weight-bold);
+}
+
+.treatment-step.immediate .step-priority {
+  background: #dc3545;
+  color: white;
+}
+
+.treatment-step.short-term .step-priority {
+  background: #fd7e14;
+  color: white;
+}
+
+.treatment-step.preventive .step-priority {
+  background: #4a7c23;
+  color: white;
+}
+
+.step-content h5 {
+  color: #2d5016;
+  margin-bottom: var(--space-8);
+  font-size: var(--font-size-lg);
+}
+
+.step-content p {
+  color: #5a6b3f;
+  line-height: 1.5;
+  margin: 0;
+}
+
+/* Impact Stats - AGRICULTURAL THEME */
+.impact-stats {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: var(--space-16);
+}
+
+.impact-stat {
+  background: rgba(255, 255, 255, 0.9);
+  padding: var(--space-16);
+  border-radius: var(--radius-md);
+  text-align: center;
+  border: 1px solid rgba(212, 197, 160, 0.4);
+}
+
+.impact-value {
+  font-size: var(--font-size-2xl);
+  font-weight: var(--font-weight-bold);
+  color: #4a7c23;
+  margin-bottom: var(--space-8);
+}
+
+.impact-label {
+  font-size: var(--font-size-sm);
+  color: #5a6b3f;
+}
+
+/* Weather Page - AGRICULTURAL THEME */
+.weather-dashboard {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-32);
+}
+
+.weather-controls {
+  background: rgba(255, 255, 255, 0.95);
+  padding: var(--space-20);
+  border-radius: var(--radius-lg);
+  box-shadow: 0 4px 12px rgba(45, 80, 22, 0.1);
+  border: 1px solid rgba(212, 197, 160, 0.3);
+}
+
+.weather-overview {
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: var(--radius-lg);
+  padding: var(--space-32);
+  box-shadow: 0 8px 24px rgba(45, 80, 22, 0.1);
+  border: 1px solid rgba(212, 197, 160, 0.3);
+}
+
+.current-weather-detailed {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: var(--space-32);
+  align-items: center;
+}
+
+.current-main {
+  text-align: center;
+}
+
+.weather-icon-large {
+  font-size: 5rem;
+  margin-bottom: var(--space-16);
+}
+
+.current-temp {
+  font-size: 4rem;
+  font-weight: var(--font-weight-bold);
+  color: #4a7c23;
+  margin-bottom: var(--space-8);
+}
+
+.current-condition {
+  font-size: var(--font-size-xl);
+  color: #2d5016;
+  margin-bottom: var(--space-8);
+}
+
+.current-location {
+  font-size: var(--font-size-lg);
+  color: #5a6b3f;
+}
+
+.current-stats {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--space-20);
+}
+
+.weather-stat-detailed {
+  display: flex;
+  align-items: center;
+  gap: var(--space-12);
+  background: rgba(232, 242, 225, 0.4);
+  padding: var(--space-16);
+  border-radius: var(--radius-base);
+  border: 1px solid rgba(212, 197, 160, 0.4);
+}
+
+.stat-icon {
+  font-size: var(--font-size-2xl);
+}
+
+.weather-stat-detailed .stat-label {
+  color: #5a6b3f;
+  font-size: var(--font-size-sm);
+  margin-bottom: var(--space-4);
+}
+
+.weather-stat-detailed .stat-value {
+  color: #2d5016;
+  font-weight: var(--font-weight-bold);
+  font-size: var(--font-size-lg);
+}
+
+/* 14-Day Forecast - AGRICULTURAL THEME */
+.weather-forecast-extended {
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: var(--radius-lg);
+  padding: var(--space-32);
+  box-shadow: 0 8px 24px rgba(45, 80, 22, 0.1);
+  border: 1px solid rgba(212, 197, 160, 0.3);
+}
+
+.weather-forecast-extended h3 {
+  margin-bottom: var(--space-20);
+  color: #2d5016;
+}
+
+.forecast-container {
+  overflow-x: auto;
+}
+
+.forecast-scroll {
+  display: flex;
+  gap: var(--space-12);
+  min-width: max-content;
+  padding-bottom: var(--space-8);
+}
+
+.forecast-day-card {
+  background: rgba(232, 242, 225, 0.3);
+  border: 1px solid rgba(212, 197, 160, 0.4);
+  border-radius: var(--radius-md);
+  padding: var(--space-16);
+  text-align: center;
+  min-width: 120px;
+  transition: all var(--duration-normal) var(--ease-standard);
+}
+
+.forecast-day-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 4px 12px rgba(45, 80, 22, 0.1);
+}
+
+.forecast-date {
+  font-size: var(--font-size-sm);
+  color: #5a6b3f;
+  margin-bottom: var(--space-8);
+  font-weight: var(--font-weight-medium);
+}
+
+.forecast-icon-day {
+  font-size: var(--font-size-2xl);
+  margin-bottom: var(--space-8);
+}
+
+.forecast-temps-day {
+  margin-bottom: var(--space-8);
+}
+
+.forecast-high {
+  font-weight: var(--font-weight-bold);
+  color: #2d5016;
+}
+
+.forecast-low {
+  color: #5a6b3f;
+  margin-left: var(--space-4);
+}
+
+.forecast-rain {
+  font-size: var(--font-size-xs);
+  color: #4a7c23;
+  margin-bottom: var(--space-4);
+}
+
+.forecast-advice {
+  font-size: var(--font-size-xs);
+  color: #6ba82f;
+  font-weight: var(--font-weight-medium);
+  line-height: 1.2;
+}
+
+/* Farming Alerts - AGRICULTURAL THEME */
+.weather-farming-alerts {
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: var(--radius-lg);
+  padding: var(--space-32);
+  box-shadow: 0 8px 24px rgba(45, 80, 22, 0.1);
+  border: 1px solid rgba(212, 197, 160, 0.3);
+}
+
+.farming-alerts-list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-16);
+}
+
+.farming-alert {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: var(--space-16);
+  padding: var(--space-16);
+  border-radius: var(--radius-md);
+  border: 1px solid rgba(212, 197, 160, 0.4);
+}
+
+.farming-alert.warning {
+  background: rgba(253, 126, 20, 0.08);
+  border-left: 4px solid #fd7e14;
+}
+
+.farming-alert.success {
+  background: rgba(107, 168, 47, 0.08);
+  border-left: 4px solid #6ba82f;
+}
+
+.alert-icon {
+  font-size: var(--font-size-2xl);
+}
+
+.alert-content h4 {
+  color: #2d5016;
+  margin-bottom: var(--space-8);
+  font-size: var(--font-size-lg);
+}
+
+.alert-content p {
+  color: #5a6b3f;
+  margin-bottom: var(--space-8);
+  line-height: 1.5;
+}
+
+.alert-validity {
+  font-size: var(--font-size-sm);
+  color: #4a7c23;
+  font-weight: var(--font-weight-medium);
+}
+
+/* Weather Charts - AGRICULTURAL THEME */
+.weather-charts {
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: var(--radius-lg);
+  padding: var(--space-32);
+  box-shadow: 0 8px 24px rgba(45, 80, 22, 0.1);
+  border: 1px solid rgba(212, 197, 160, 0.3);
+}
+
+.chart-tabs {
+  display: flex;
+  gap: var(--space-8);
+  margin-bottom: var(--space-24);
+}
+
+.chart-tab-btn {
+  background: rgba(232, 242, 225, 0.5);
+  border: 1px solid rgba(212, 197, 160, 0.4);
+  color: #2d5016;
+  padding: var(--space-8) var(--space-16);
+  border-radius: var(--radius-base);
+  cursor: pointer;
+  transition: all var(--duration-fast) var(--ease-standard);
+  font-weight: var(--font-weight-medium);
+}
+
+.chart-tab-btn:hover {
+  background: rgba(232, 242, 225, 0.8);
+}
+
+.chart-tab-btn.active {
+  background: linear-gradient(135deg, #4a7c23, #6ba82f);
+  color: white;
+  border-color: #4a7c23;
+}
+
+/* Market Page - AGRICULTURAL THEME */
+.market-dashboard {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-32);
+}
+
+.price-overview {
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: var(--radius-lg);
+  padding: var(--space-32);
+  box-shadow: 0 8px 24px rgba(45, 80, 22, 0.1);
+  border: 1px solid rgba(212, 197, 160, 0.3);
+}
+
+.price-cards-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: var(--space-20);
+}
+
+.price-card-market {
+  background: rgba(232, 242, 225, 0.3);
+  border: 1px solid rgba(212, 197, 160, 0.4);
+  border-radius: var(--radius-md);
+  padding: var(--space-20);
+  text-align: center;
+  transition: all var(--duration-normal) var(--ease-standard);
+}
+
+.price-card-market:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 4px 12px rgba(45, 80, 22, 0.1);
+}
+
+.crop-name-market {
+  font-size: var(--font-size-lg);
+  font-weight: var(--font-weight-bold);
+  color: #2d5016;
+  margin-bottom: var(--space-12);
+}
+
+.crop-price-market {
+  font-size: var(--font-size-2xl);
+  font-weight: var(--font-weight-bold);
+  color: #4a7c23;
+  margin-bottom: var(--space-8);
+}
+
+.price-change-market {
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-medium);
+  padding: var(--space-4) var(--space-8);
+  border-radius: var(--radius-full);
+  display: inline-block;
+}
+
+.price-change-market.up {
+  background: rgba(107, 168, 47, 0.2);
+  color: #6ba82f;
+}
+
+.price-change-market.down {
+  background: rgba(220, 53, 69, 0.2);
+  color: #dc3545;
+}
+
+.market-analysis {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: var(--space-32);
+}
+
+.price-trends {
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: var(--radius-lg);
+  padding: var(--space-32);
+  box-shadow: 0 8px 24px rgba(45, 80, 22, 0.1);
+  border: 1px solid rgba(212, 197, 160, 0.3);
+}
+
+.market-insights {
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: var(--radius-lg);
+  padding: var(--space-32);
+  box-shadow: 0 8px 24px rgba(45, 80, 22, 0.1);
+  border: 1px solid rgba(212, 197, 160, 0.3);
+}
+
+.insights-list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-20);
+}
+
+.insight-item {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: var(--space-16);
+  padding: var(--space-16);
+  background: rgba(218, 165, 32, 0.05);
+  border-radius: var(--radius-base);
+  border: 1px solid rgba(218, 165, 32, 0.2);
+}
+
+.insight-icon {
+  font-size: var(--font-size-2xl);
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: var(--radius-full);
+}
+
+.insight-icon.trend-up {
+  background: rgba(107, 168, 47, 0.2);
+}
+
+.insight-icon.trend-down {
+  background: rgba(220, 53, 69, 0.2);
+}
+
+.insight-icon.stable {
+  background: rgba(74, 124, 35, 0.2);
+}
+
+.insight-content h4 {
+  color: #2d5016;
+  margin-bottom: var(--space-8);
+  font-size: var(--font-size-lg);
+}
+
+.insight-content p {
+  color: #5a6b3f;
+  margin-bottom: var(--space-8);
+  line-height: 1.5;
+}
+
+.insight-recommendation {
+  font-size: var(--font-size-sm);
+  color: #4a7c23;
+  font-weight: var(--font-weight-medium);
+  font-style: italic;
+}
+
+/* Schemes Page - AGRICULTURAL THEME */
+.schemes-dashboard {
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: var(--radius-lg);
+  padding: var(--space-32);
+  box-shadow: 0 8px 24px rgba(45, 80, 22, 0.1);
+  border: 1px solid rgba(212, 197, 160, 0.3);
+}
+
+.schemes-filter {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: var(--space-16);
+  margin-bottom: var(--space-32);
+  padding-bottom: var(--space-24);
+  border-bottom: 2px solid rgba(212, 197, 160, 0.4);
+}
+
+.schemes-grid {
+  display: grid;
+  gap: var(--space-20);
+}
+
+.scheme-card-detailed {
+  background: rgba(248, 250, 245, 0.8);
+  border: 1px solid rgba(212, 197, 160, 0.4);
+  border-radius: var(--radius-md);
+  padding: var(--space-24);
+  transition: all var(--duration-normal) var(--ease-standard);
+}
+
+.scheme-card-detailed:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 18px rgba(45, 80, 22, 0.1);
+}
+
+.scheme-header-detailed {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: var(--space-16);
+}
+
+.scheme-title {
+  font-size: var(--font-size-xl);
+  font-weight: var(--font-weight-bold);
+  color: #2d5016;
+}
+
+.scheme-amount-badge {
+  background: linear-gradient(135deg, #6ba82f, #4a7c23);
+  color: white;
+  padding: var(--space-8) var(--space-16);
+  border-radius: var(--radius-full);
+  font-weight: var(--font-weight-bold);
+  font-size: var(--font-size-sm);
+}
+
+.scheme-description {
+  color: #5a6b3f;
+  margin-bottom: var(--space-16);
+  line-height: 1.6;
+}
+
+.scheme-details {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: var(--space-16);
+  margin-bottom: var(--space-16);
+}
+
+.scheme-detail-item {
+  background: rgba(255, 255, 255, 0.8);
+  padding: var(--space-12);
+  border-radius: var(--radius-base);
+  border: 1px solid rgba(212, 197, 160, 0.3);
+}
+
+.detail-label {
+  font-size: var(--font-size-sm);
+  color: #5a6b3f;
+  margin-bottom: var(--space-4);
+}
+
+.detail-value {
+  color: #2d5016;
+  font-weight: var(--font-weight-medium);
+}
+
+/* Community Page - AGRICULTURAL THEME */
+.community-dashboard {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-32);
+}
+
+.success-stories {
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: var(--radius-lg);
+  padding: var(--space-32);
+  box-shadow: 0 8px 24px rgba(45, 80, 22, 0.1);
+  border: 1px solid rgba(212, 197, 160, 0.3);
+}
+
+.stories-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: var(--space-24);
+}
+
+.story-card {
+  background: rgba(232, 242, 225, 0.4);
+  border: 1px solid rgba(212, 197, 160, 0.4);
+  border-radius: var(--radius-md);
+  padding: var(--space-24);
+  transition: all var(--duration-normal) var(--ease-standard);
+}
+
+.story-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 6px 18px rgba(45, 80, 22, 0.1);
+}
+
+.story-header {
+  display: flex;
+  align-items: center;
+  gap: var(--space-16);
+  margin-bottom: var(--space-16);
+}
+
+.farmer-avatar {
+  font-size: var(--font-size-3xl);
+}
+
+.farmer-info h4 {
+  color: #2d5016;
+  margin-bottom: var(--space-4);
+  font-size: var(--font-size-lg);
+}
+
+.farmer-location {
+  color: #5a6b3f;
+  font-size: var(--font-size-sm);
+}
+
+.improvement-badge {
+  background: linear-gradient(135deg, #6ba82f, #4a7c23);
+  color: white;
+  padding: var(--space-6) var(--space-12);
+  border-radius: var(--radius-full);
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-bold);
+  margin-bottom: var(--space-16);
+  display: inline-block;
+}
+
+.farmer-story {
+  color: #2d5016;
+  font-style: italic;
+  line-height: 1.6;
+}
+
+/* Soil Health Section - AGRICULTURAL THEME */
+.soil-health-section {
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: var(--radius-lg);
+  padding: var(--space-32);
+  box-shadow: 0 8px 24px rgba(45, 80, 22, 0.1);
+  border: 1px solid rgba(212, 197, 160, 0.3);
+}
+
+.soil-health-dashboard {
+  margin-top: var(--space-24);
+}
+
+.soil-metrics-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: var(--space-24);
+}
+
+.soil-metric {
+  background: rgba(218, 165, 32, 0.05);
+  border: 1px solid rgba(218, 165, 32, 0.2);
+  border-radius: var(--radius-md);
+  padding: var(--space-20);
+}
+
+.metric-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: var(--space-16);
+}
+
+.metric-header h4 {
+  color: #2d5016;
+  font-size: var(--font-size-lg);
+}
+
+.metric-gauge {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-8);
+}
+
+.gauge-meter {
+  width: 80px;
+  height: 8px;
+  background: rgba(212, 197, 160, 0.4);
+  border-radius: var(--radius-full);
+  overflow: hidden;
+  position: relative;
+}
+
+.gauge-fill {
+  height: 100%;
+  background: linear-gradient(90deg, #4a7c23, #6ba82f);
+  border-radius: var(--radius-full);
+  transition: width var(--duration-normal) var(--ease-standard);
+}
+
+.gauge-value {
+  font-weight: var(--font-weight-bold);
+  color: #2d5016;
+  font-size: var(--font-size-lg);
+}
+
+.metric-status {
+  padding: var(--space-4) var(--space-12);
+  border-radius: var(--radius-full);
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-bold);
+  text-align: center;
+  margin-bottom: var(--space-12);
+}
+
+.metric-status.slightly-acidic {
+  background: #fd7e14;
+  color: white;
+}
+
+.metric-status.medium {
+  background: #4a7c23;
+  color: white;
+}
+
+.metric-status.low {
+  background: #dc3545;
+  color: white;
+}
+
+.metric-status.high {
+  background: #4a7c23;
+  color: white;
+}
+
+.metric-status.good {
+  background: #6ba82f;
+  color: white;
+}
+
+.metric-status.optimal {
+  background: #6ba82f;
+  color: white;
+}
+
+.metric-recommendation {
+  color: #5a6b3f;
+  font-size: var(--font-size-sm);
+  line-height: 1.4;
+  text-align: center;
+}
+
+/* Chatbot Widget - AGRICULTURAL THEME */
+.chatbot-widget {
+  position: fixed;
+  bottom: var(--space-20);
+  right: var(--space-20);
+  width: 380px;
+  background: rgba(255, 255, 255, 0.98);
+  border-radius: var(--radius-lg);
+  box-shadow: 0 8px 32px rgba(45, 80, 22, 0.15);
+  border: 1px solid rgba(212, 197, 160, 0.4);
+  z-index: 2000;
+  overflow: hidden;
+}
+
+.chatbot-header {
+  display: flex;
+  align-items: center;
+  padding: var(--space-16);
+  background: linear-gradient(135deg, #4a7c23, #6ba82f);
+  color: white;
+  cursor: pointer;
+  transition: all var(--duration-normal) var(--ease-standard);
+}
+
+.chatbot-header:hover {
+  background: linear-gradient(135deg, #3d6b1d, #5d9428);
+}
+
+.chatbot-avatar {
+  font-size: var(--font-size-xl);
+  margin-right: var(--space-12);
+}
+
+.chatbot-info {
+  flex: 1;
+}
+
+.chatbot-title {
+  font-weight: var(--font-weight-bold);
+  margin-bottom: var(--space-2);
+}
+
+.chatbot-status {
+  font-size: var(--font-size-sm);
+  opacity: 0.9;
+}
+
+.chatbot-toggle {
+  font-size: var(--font-size-lg);
+  transition: transform var(--duration-normal) var(--ease-standard);
+}
+
+.chatbot-toggle.rotated {
+  transform: rotate(180deg);
+}
+
+.chatbot-body {
+  max-height: 500px;
+  display: flex;
+  flex-direction: column;
+}
+
+.chatbot-body .language-selector {
+  padding: var(--space-12);
+  border-bottom: 1px solid rgba(212, 197, 160, 0.3);
+}
+
+.chat-messages {
+  flex: 1;
+  max-height: 250px;
+  overflow-y: auto;
+  padding: var(--space-16);
+  scrollbar-width: thin;
+  scrollbar-color: rgba(212, 197, 160, 0.4) transparent;
+}
+
+.chat-messages::-webkit-scrollbar {
+  width: 4px;
+}
+
+.chat-messages::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.chat-messages::-webkit-scrollbar-thumb {
+  background: rgba(212, 197, 160, 0.4);
+  border-radius: var(--radius-full);
+}
+
+.message {
+  margin-bottom: var(--space-12);
+  animation: messageSlideIn 0.3s ease-out;
+}
+
+@keyframes messageSlideIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.bot-message .message-content {
+  background: rgba(232, 242, 225, 0.6);
+  padding: var(--space-12);
+  border-radius: var(--radius-base);
+  border: 1px solid rgba(212, 197, 160, 0.4);
+  max-width: 85%;
+}
+
+.user-message {
+  text-align: right;
+}
+
+.user-message .message-content {
+  background: linear-gradient(135deg, #4a7c23, #6ba82f);
+  color: white;
+  padding: var(--space-12);
+  border-radius: var(--radius-base);
+  display: inline-block;
+  max-width: 85%;
+}
+
+.quick-questions {
+  padding: var(--space-12);
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-8);
+  border-bottom: 1px solid rgba(212, 197, 160, 0.3);
+  background: rgba(232, 242, 225, 0.3);
+}
+
+.quick-btn {
+  background: rgba(255, 255, 255, 0.9);
+  border: 1px solid rgba(212, 197, 160, 0.4);
+  padding: var(--space-6) var(--space-12);
+  border-radius: var(--radius-full);
+  font-size: var(--font-size-sm);
+  cursor: pointer;
+  transition: all var(--duration-fast) var(--ease-standard);
+  color: #2d5016;
+}
+
+.quick-btn:hover {
+  background: linear-gradient(135deg, #4a7c23, #6ba82f);
+  color: white;
+  transform: translateY(-1px);
+}
+
+.chat-input {
+  display: flex;
+  padding: var(--space-12);
+  gap: var(--space-8);
+  background: rgba(255, 255, 255, 0.95);
+}
+
+.chat-input input {
+  flex: 1;
+  border: 1px solid rgba(212, 197, 160, 0.4);
+  border-radius: var(--radius-base);
+  padding: var(--space-8) var(--space-12);
+  background: rgba(255, 255, 255, 0.9);
+  color: #2d5016;
+}
+
+.chat-input input:focus {
+  outline: none;
+  border-color: #4a7c23;
+}
+
+/* Loading States */
+.loading-spinner {
+  width: 20px;
+  height: 20px;
+  border: 2px solid rgba(212, 197, 160, 0.3);
+  border-top: 2px solid #4a7c23;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+  display: inline-block;
+}
+
+.btn .loading-spinner {
+  margin-left: var(--space-8);
+}
+
+/* Notifications - AGRICULTURAL THEME */
+.notifications-container {
+  position: fixed;
+  top: 100px;
+  right: var(--space-20);
+  z-index: 1500;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-8);
+}
+
+.notification {
+  background: rgba(255, 255, 255, 0.98);
+  border: 1px solid rgba(212, 197, 160, 0.4);
+  border-radius: var(--radius-base);
+  padding: var(--space-12) var(--space-16);
+  box-shadow: 0 4px 12px rgba(45, 80, 22, 0.1);
+  min-width: 300px;
+  animation: notificationSlide 0.4s ease-out;
+  position: relative;
+}
+
+@keyframes notificationSlide {
+  from { opacity: 0; transform: translateX(100%); }
+  to { opacity: 1; transform: translateX(0); }
+}
+
+.notification--success {
+  border-left: 4px solid #6ba82f;
+  background: rgba(107, 168, 47, 0.05);
+}
+
+.notification--error {
+  border-left: 4px solid #dc3545;
+  background: rgba(220, 53, 69, 0.05);
+}
+
+.notification--info {
+  border-left: 4px solid #4a7c23;
+  background: rgba(74, 124, 35, 0.05);
+}
+
+.notification--warning {
+  border-left: 4px solid #fd7e14;
+  background: rgba(253, 126, 20, 0.05);
+}
+
+/* Form Controls - AGRICULTURAL THEME */
+.form-control {
+  background-color: rgba(255, 255, 255, 0.9);
+  border: 1px solid rgba(212, 197, 160, 0.5);
+  color: #2d5016;
+}
+
+.form-control:focus {
+  border-color: #4a7c23;
+  outline: 2px solid rgba(74, 124, 35, 0.2);
+}
+
+.form-label {
+  color: #2d5016;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .market-analysis {
+    grid-template-columns: 1fr;
+  }
+  
+  .current-weather-detailed {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+  
+  .current-stats {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+  .nav-links {
+    display: none;
+  }
+  
+  .nav-mobile-toggle {
+    display: block;
+  }
+  
+  .hero-title {
+    font-size: var(--font-size-3xl);
+  }
+  
+  .hero-buttons {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .metrics-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .calc-form-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .results-grid-advanced {
+    grid-template-columns: 1fr;
+  }
+  
+  .recommendation-filters {
+    grid-template-columns: 1fr;
+  }
+  
+  .chatbot-widget {
+    width: calc(100% - 40px);
+    right: var(--space-20);
+    left: var(--space-20);
+  }
+  
+  .notifications-container {
+    left: var(--space-20);
+    right: var(--space-20);
+  }
+  
+  .notification {
+    min-width: auto;
+  }
+  
+  .weather-stats-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .soil-metrics-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .stories-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .price-cards-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .page {
+    padding-top: 100px;
+  }
+  
+  .current-temp {
+    font-size: 3rem;
+  }
+  
+  .weather-icon-large {
+    font-size: 4rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .metrics-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .price-cards-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .hero-content {
+    padding-top: 80px;
+  }
+  
+  .hero-title {
+    font-size: var(--font-size-2xl);
+  }
+  
+  .hero-description {
+    font-size: var(--font-size-lg);
+  }
+}
+
+/* Utility Classes */
+.hidden {
+  display: none !important;
+}
+
+.fade-in {
+  animation: fadeIn 0.5s ease-out;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.slide-up {
+  animation: slideUp 0.6s ease-out;
+}
+
+@keyframes slideUp {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
